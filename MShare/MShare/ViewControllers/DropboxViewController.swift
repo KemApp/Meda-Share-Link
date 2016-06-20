@@ -15,6 +15,8 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
     var restClient:DBRestClient?;
     var cursor:String = String();
     var dataSource:[AnyObject] = [AnyObject]();
+    var paths:[DBMetadata] = [DBMetadata]();
+    var scrollViewHeader:UIScrollView!;
     override func viewDidLoad() {
         super.viewDidLoad()
         if(DBSession.sharedSession() == nil || DBSession.sharedSession().isLinked() == false){
@@ -24,6 +26,8 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
         else{
             restClient = DBRestClient.init(session: DBSession.sharedSession());
             restClient?.delegate = self;
+            let root:DBMetadata = DBMetadata();
+            paths.append(DBMetadata());
             restClient?.loadMetadata("/");
             
             
@@ -43,6 +47,8 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
 //        print(firebaseArray.count());
 
         // Do any additional setup after loading the view.
+        
+       self.scrollViewHeader = UIScrollView.init(frame: CGRectMake(0, 0, self.tbView.frame.size.width, 30.0));
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
@@ -68,7 +74,7 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
     }
 
     /*
-     * TABLE DATASOUR / DELEGATE
+     * MARK: TABLE DATASOUR / DELEGATE
      */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataSource.count;
@@ -84,17 +90,64 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
         }
         let source:DBMetadata = self.dataSource[indexPath.row] as! DBMetadata;
         cell?.textLabel?.text = source.filename;
+        
         if(source.isDirectory){
-            cell?.imageView?.image = UIImage.init(named: "icon_folder");
+//            cell?.imageView?.image = UIImage.init(named: "icon_folder");
+            cell?.backgroundColor = UIColor.grayColor();
         }else{
-            cell?.imageView?.image = nil;
+//            cell?.imageView?.image = nil;
+            cell?.backgroundColor = UIColor.whiteColor();
         }
         
         return cell!;
     }
  
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30.0;
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        scrollViewHeader.removeFromSuperview();
+        scrollViewHeader = nil;
+        scrollViewHeader = UIScrollView.init(frame:CGRectMake(0, 0, tableView.frame.width, 30));
+        let headerView:UIView = UIView.init(frame:CGRectMake(0, 0, tableView.frame.width, 30));
+        
+        var width:CGFloat = 0.0;
+        for path in paths {
+            let button:UIButton = UIButton.init(frame: CGRectMake(0, width, 50, 30));
+            button.backgroundColor = UIColor.grayColor();
+            width += 50;
+            scrollViewHeader.addSubview(button);
+
+            if(paths.indexOf(path) == 0){
+//                button.titleLabel?.text = "root";
+                button.setTitle("root", forState: .Normal);
+            }
+            else{
+                button.titleLabel?.text = path.path;
+                button.setTitle(path.path, forState: .Normal);
+            }
+            
+        }
+        scrollViewHeader.contentSize = CGSizeMake(width, 30);
+        headerView.addSubview(scrollViewHeader);
+        headerView.backgroundColor = UIColor.blueColor();
+        
+        scrollViewHeader.backgroundColor = UIColor.greenColor();
+        return headerView;
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let item:DBMetadata = self.dataSource[indexPath.row] as! DBMetadata;
+        
+        if(item.isDirectory){
+            self.paths.append(item);
+            self.restClient?.loadMetadata(item.path);
+            self.tableView(self.tbView, viewForHeaderInSection: 0);
+        }
+    }
     /*
-     * RESTCLIENT DELEGATE
+     *  MARK: RESTCLIENT DELEGATE
     */
     func restClient(client: DBRestClient!, loadedDeltaEntries entries: [AnyObject]!, reset shouldReset: Bool, cursor: String!, hasMore: Bool) {
         self.cursor = cursor;
@@ -107,10 +160,27 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
                 if(item.isDirectory){
                     self.dataSource.append(item);
                 }
-                else if(item.filename.isVideoFile()){
+                else if(item.filename.isVideoFile() || item.filename.isAudioFile()){
                     self.dataSource.append(item);
                 }
             }
+            
+            self.dataSource.sortInPlace({ (item1, item2) -> Bool in
+                let item1:DBMetadata = item1 as! DBMetadata;
+                let item2:DBMetadata = item2 as! DBMetadata;
+                if(item1.isDirectory && item2.isDirectory){
+                    
+                    return item1.filename < item2.filename;
+                }
+                else{
+                    if(item1.isDirectory == true){
+                        return item1.isDirectory;
+                    }else if(item1.isDirectory == true){
+                        return item2.isDirectory;
+                    }
+                    return item1.filename < item2.filename;
+                }
+            })
         }
         
         self.tbView.reloadData();
@@ -119,12 +189,6 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
     
     func restClient(client: DBRestClient!, loadMetadataFailedWithError error: NSError!) {
         print(error);
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let item:DBMetadata = self.dataSource[indexPath.row] as! DBMetadata;
-        self.restClient?.loadStreamableURLForFile(item.path);
-        self.restClient?.loadSharableLinkForFile(item.path, shortUrl: true);
     }
     
     func restClient(restClient: DBRestClient!, loadSharableLinkFailedWithError error: NSError!) {
