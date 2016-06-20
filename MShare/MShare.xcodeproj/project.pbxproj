@@ -1,0 +1,726 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		95B469904E81E6DFBFA0C210 /* Pods_MShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BF391506237BED2D4EF7A /* Pods_MShare.framework */; };
+		FE0063681D1799B4007568EA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0063641D1799B4007568EA /* BaseViewController.swift */; };
+		FE0063691D1799B4007568EA /* CloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0063651D1799B4007568EA /* CloudViewController.swift */; };
+		FE00636A1D1799B4007568EA /* DropboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0063661D1799B4007568EA /* DropboxViewController.swift */; };
+		FE0063701D17A4AB007568EA /* KString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE00636F1D17A4AB007568EA /* KString.swift */; };
+		FE0063721D17AD01007568EA /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0063711D17AD01007568EA /* Regex.swift */; };
+		FE141CCF1D13B49E00A36415 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE141CCE1D13B49E00A36415 /* GoogleService-Info.plist */; };
+		FE32A3AA1D01306800F174AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE32A3A91D01306700F174AC /* AppDelegate.swift */; };
+		FE32A3AF1D01306800F174AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE32A3AD1D01306800F174AC /* Main.storyboard */; };
+		FE32A3B21D01306800F174AC /* MShare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE32A3B01D01306800F174AC /* MShare.xcdatamodeld */; };
+		FE32A3B41D01306800F174AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE32A3B31D01306800F174AC /* Assets.xcassets */; };
+		FE32A3B71D01306800F174AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE32A3B51D01306800F174AC /* LaunchScreen.storyboard */; };
+		FE32A3C21D01306800F174AC /* MShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE32A3C11D01306800F174AC /* MShareTests.swift */; };
+		FE32A3CD1D01306800F174AC /* MShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE32A3CC1D01306800F174AC /* MShareUITests.swift */; };
+		FED7C6431D052B8B00FEB641 /* MShareConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED7C6421D052B8B00FEB641 /* MShareConstant.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE32A3BE1D01306800F174AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE32A39E1D01306700F174AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE32A3A51D01306700F174AC;
+			remoteInfo = MShare;
+		};
+		FE32A3C91D01306800F174AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE32A39E1D01306700F174AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE32A3A51D01306700F174AC;
+			remoteInfo = MShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2410EA82F2D3F508B7E0193E /* Pods-MShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-MShare/Pods-MShare.release.xcconfig"; sourceTree = "<group>"; };
+		480CCB1CB110EA21A01D5257 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0E2682210B5BDD5CD13EABE /* Pods-MShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MShare/Pods-MShare.debug.xcconfig"; sourceTree = "<group>"; };
+		FD6BF391506237BED2D4EF7A /* Pods_MShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0063641D1799B4007568EA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FE0063651D1799B4007568EA /* CloudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudViewController.swift; sourceTree = "<group>"; };
+		FE0063661D1799B4007568EA /* DropboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxViewController.swift; sourceTree = "<group>"; };
+		FE00636F1D17A4AB007568EA /* KString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KString.swift; sourceTree = "<group>"; };
+		FE0063711D17AD01007568EA /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		FE0BB7141D06AE9C003947DE /* BoxContentSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BoxContentSDK.framework; path = "../../../Library/Developer/Xcode/DerivedData/MShare-haelwpxtmmfhrvgjtcwjwqmhtzte/Build/Products/Debug-iphoneos/box-ios-sdk/BoxContentSDK.framework"; sourceTree = "<group>"; };
+		FE141CCE1D13B49E00A36415 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FE32A3A61D01306700F174AC /* MShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE32A3A91D01306700F174AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE32A3AE1D01306800F174AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE32A3B11D01306800F174AC /* MShare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MShare.xcdatamodel; sourceTree = "<group>"; };
+		FE32A3B31D01306800F174AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE32A3B61D01306800F174AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FE32A3B81D01306800F174AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE32A3BD1D01306800F174AC /* MShareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MShareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE32A3C11D01306800F174AC /* MShareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MShareTests.swift; sourceTree = "<group>"; };
+		FE32A3C31D01306800F174AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE32A3C81D01306800F174AC /* MShareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MShareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE32A3CC1D01306800F174AC /* MShareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MShareUITests.swift; sourceTree = "<group>"; };
+		FE32A3CE1D01306800F174AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE32A3DE1D01647400F174AC /* MShare-Bridge-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MShare-Bridge-Header.h"; sourceTree = "<group>"; };
+		FED7C6421D052B8B00FEB641 /* MShareConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MShareConstant.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE32A3A31D01306700F174AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95B469904E81E6DFBFA0C210 /* Pods_MShare.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE32A3BA1D01306800F174AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE32A3C51D01306800F174AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E33A37CA4EA34144841BC44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE0BB7141D06AE9C003947DE /* BoxContentSDK.framework */,
+				480CCB1CB110EA21A01D5257 /* Pods.framework */,
+				FD6BF391506237BED2D4EF7A /* Pods_MShare.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		990CDAFC4DAAD3A2C382912D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0E2682210B5BDD5CD13EABE /* Pods-MShare.debug.xcconfig */,
+				2410EA82F2D3F508B7E0193E /* Pods-MShare.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE0063621D1799B4007568EA /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		FE0063631D1799B4007568EA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE0063641D1799B4007568EA /* BaseViewController.swift */,
+				FE0063651D1799B4007568EA /* CloudViewController.swift */,
+				FE0063661D1799B4007568EA /* DropboxViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FE00636C1D1799D3007568EA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FE00636D1D179D89007568EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FE00636E1D17A36F007568EA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FE00636F1D17A4AB007568EA /* KString.swift */,
+				FE0063711D17AD01007568EA /* Regex.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FE32A39D1D01306700F174AC = {
+			isa = PBXGroup;
+			children = (
+				FE32A3A81D01306700F174AC /* MShare */,
+				FE32A3C01D01306800F174AC /* MShareTests */,
+				FE32A3CB1D01306800F174AC /* MShareUITests */,
+				FE32A3A71D01306700F174AC /* Products */,
+				2E33A37CA4EA34144841BC44 /* Frameworks */,
+				990CDAFC4DAAD3A2C382912D /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		FE32A3A71D01306700F174AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE32A3A61D01306700F174AC /* MShare.app */,
+				FE32A3BD1D01306800F174AC /* MShareTests.xctest */,
+				FE32A3C81D01306800F174AC /* MShareUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE32A3A81D01306700F174AC /* MShare */ = {
+			isa = PBXGroup;
+			children = (
+				FE00636E1D17A36F007568EA /* Extension */,
+				FE00636D1D179D89007568EA /* Views */,
+				FE00636C1D1799D3007568EA /* Models */,
+				FE0063621D1799B4007568EA /* Library */,
+				FE0063631D1799B4007568EA /* ViewControllers */,
+				FE32A3DD1D01611F00F174AC /* Constant */,
+				FE32A3A91D01306700F174AC /* AppDelegate.swift */,
+				FE32A3AD1D01306800F174AC /* Main.storyboard */,
+				FE32A3B31D01306800F174AC /* Assets.xcassets */,
+				FE32A3B51D01306800F174AC /* LaunchScreen.storyboard */,
+				FE32A3B81D01306800F174AC /* Info.plist */,
+				FE32A3B01D01306800F174AC /* MShare.xcdatamodeld */,
+				FE141CCE1D13B49E00A36415 /* GoogleService-Info.plist */,
+			);
+			path = MShare;
+			sourceTree = "<group>";
+		};
+		FE32A3C01D01306800F174AC /* MShareTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE32A3C11D01306800F174AC /* MShareTests.swift */,
+				FE32A3C31D01306800F174AC /* Info.plist */,
+			);
+			path = MShareTests;
+			sourceTree = "<group>";
+		};
+		FE32A3CB1D01306800F174AC /* MShareUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FE32A3CC1D01306800F174AC /* MShareUITests.swift */,
+				FE32A3CE1D01306800F174AC /* Info.plist */,
+			);
+			path = MShareUITests;
+			sourceTree = "<group>";
+		};
+		FE32A3DD1D01611F00F174AC /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				FE32A3DE1D01647400F174AC /* MShare-Bridge-Header.h */,
+				FED7C6421D052B8B00FEB641 /* MShareConstant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE32A3A51D01306700F174AC /* MShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE32A3D11D01306800F174AC /* Build configuration list for PBXNativeTarget "MShare" */;
+			buildPhases = (
+				D67084DBAB8F9ABFFC15CC87 /* [CP] Check Pods Manifest.lock */,
+				FE32A3A21D01306700F174AC /* Sources */,
+				FE32A3A31D01306700F174AC /* Frameworks */,
+				FE32A3A41D01306700F174AC /* Resources */,
+				EE4810AA59ADEA44750E4CAC /* [CP] Embed Pods Frameworks */,
+				629A7E1C672D1CFE2936BFD4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MShare;
+			productName = MShare;
+			productReference = FE32A3A61D01306700F174AC /* MShare.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE32A3BC1D01306800F174AC /* MShareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE32A3D41D01306800F174AC /* Build configuration list for PBXNativeTarget "MShareTests" */;
+			buildPhases = (
+				FE32A3B91D01306800F174AC /* Sources */,
+				FE32A3BA1D01306800F174AC /* Frameworks */,
+				FE32A3BB1D01306800F174AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE32A3BF1D01306800F174AC /* PBXTargetDependency */,
+			);
+			name = MShareTests;
+			productName = MShareTests;
+			productReference = FE32A3BD1D01306800F174AC /* MShareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FE32A3C71D01306800F174AC /* MShareUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE32A3D71D01306800F174AC /* Build configuration list for PBXNativeTarget "MShareUITests" */;
+			buildPhases = (
+				FE32A3C41D01306800F174AC /* Sources */,
+				FE32A3C51D01306800F174AC /* Frameworks */,
+				FE32A3C61D01306800F174AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE32A3CA1D01306800F174AC /* PBXTargetDependency */,
+			);
+			name = MShareUITests;
+			productName = MShareUITests;
+			productReference = FE32A3C81D01306800F174AC /* MShareUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE32A39E1D01306700F174AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Legiti Ltd";
+				TargetAttributes = {
+					FE32A3A51D01306700F174AC = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					FE32A3BC1D01306800F174AC = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = FE32A3A51D01306700F174AC;
+					};
+					FE32A3C71D01306800F174AC = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = FE32A3A51D01306700F174AC;
+					};
+				};
+			};
+			buildConfigurationList = FE32A3A11D01306700F174AC /* Build configuration list for PBXProject "MShare" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE32A39D1D01306700F174AC;
+			productRefGroup = FE32A3A71D01306700F174AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE32A3A51D01306700F174AC /* MShare */,
+				FE32A3BC1D01306800F174AC /* MShareTests */,
+				FE32A3C71D01306800F174AC /* MShareUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE32A3A41D01306700F174AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE32A3B71D01306800F174AC /* LaunchScreen.storyboard in Resources */,
+				FE32A3B41D01306800F174AC /* Assets.xcassets in Resources */,
+				FE141CCF1D13B49E00A36415 /* GoogleService-Info.plist in Resources */,
+				FE32A3AF1D01306800F174AC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE32A3BB1D01306800F174AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE32A3C61D01306800F174AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		629A7E1C672D1CFE2936BFD4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MShare/Pods-MShare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D67084DBAB8F9ABFFC15CC87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EE4810AA59ADEA44750E4CAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MShare/Pods-MShare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE32A3A21D01306700F174AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE32A3B21D01306800F174AC /* MShare.xcdatamodeld in Sources */,
+				FE0063721D17AD01007568EA /* Regex.swift in Sources */,
+				FED7C6431D052B8B00FEB641 /* MShareConstant.swift in Sources */,
+				FE0063701D17A4AB007568EA /* KString.swift in Sources */,
+				FE0063681D1799B4007568EA /* BaseViewController.swift in Sources */,
+				FE32A3AA1D01306800F174AC /* AppDelegate.swift in Sources */,
+				FE00636A1D1799B4007568EA /* DropboxViewController.swift in Sources */,
+				FE0063691D1799B4007568EA /* CloudViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE32A3B91D01306800F174AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE32A3C21D01306800F174AC /* MShareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE32A3C41D01306800F174AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE32A3CD1D01306800F174AC /* MShareUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE32A3BF1D01306800F174AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE32A3A51D01306700F174AC /* MShare */;
+			targetProxy = FE32A3BE1D01306800F174AC /* PBXContainerItemProxy */;
+		};
+		FE32A3CA1D01306800F174AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE32A3A51D01306700F174AC /* MShare */;
+			targetProxy = FE32A3C91D01306800F174AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE32A3AD1D01306800F174AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE32A3AE1D01306800F174AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE32A3B51D01306800F174AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE32A3B61D01306800F174AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE32A3CF1D01306800F174AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE32A3D01D01306800F174AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE32A3D21D01306800F174AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0E2682210B5BDD5CD13EABE /* Pods-MShare.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Headers",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Dropbox-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleInterchangeUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/OneDriveSDK\"",
+					"\"${PODS_ROOT}/Headers/Public/box-ios-sdk\"",
+					"\"${PODS_ROOT}/BuildHeaders\"/**",
+					"\"$(SRCROOT)/Pods/Headers/\"/**",
+				);
+				INFOPLIST_FILE = MShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quabebap.MediaLink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$PROJECT_DIR/MShare/Constant/MShare-Bridge-Header.h";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		FE32A3D31D01306800F174AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2410EA82F2D3F508B7E0193E /* Pods-MShare.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Headers",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Dropbox-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleInterchangeUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/OneDriveSDK\"",
+					"\"${PODS_ROOT}/Headers/Public/box-ios-sdk\"",
+					"\"${PODS_ROOT}/BuildHeaders\"/**",
+					"\"$(SRCROOT)/Pods/Headers/\"/**",
+				);
+				INFOPLIST_FILE = MShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quabebap.MediaLink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$PROJECT_DIR/MShare/Constant/MShare-Bridge-Header.h";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		FE32A3D51D01306800F174AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MShareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.caykem.MShareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MShare.app/MShare";
+			};
+			name = Debug;
+		};
+		FE32A3D61D01306800F174AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MShareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.caykem.MShareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MShare.app/MShare";
+			};
+			name = Release;
+		};
+		FE32A3D81D01306800F174AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MShareUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.caykem.MShareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MShare;
+			};
+			name = Debug;
+		};
+		FE32A3D91D01306800F174AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MShareUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.caykem.MShareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MShare;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE32A3A11D01306700F174AC /* Build configuration list for PBXProject "MShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE32A3CF1D01306800F174AC /* Debug */,
+				FE32A3D01D01306800F174AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE32A3D11D01306800F174AC /* Build configuration list for PBXNativeTarget "MShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE32A3D21D01306800F174AC /* Debug */,
+				FE32A3D31D01306800F174AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE32A3D41D01306800F174AC /* Build configuration list for PBXNativeTarget "MShareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE32A3D51D01306800F174AC /* Debug */,
+				FE32A3D61D01306800F174AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE32A3D71D01306800F174AC /* Build configuration list for PBXNativeTarget "MShareUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE32A3D81D01306800F174AC /* Debug */,
+				FE32A3D91D01306800F174AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FE32A3B01D01306800F174AC /* MShare.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FE32A3B11D01306800F174AC /* MShare.xcdatamodel */,
+			);
+			currentVersion = FE32A3B11D01306800F174AC /* MShare.xcdatamodel */;
+			path = MShare.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FE32A39E1D01306700F174AC /* Project object */;
+}
