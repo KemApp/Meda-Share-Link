@@ -13,6 +13,8 @@
 		FE00636A1D1799B4007568EA /* DropboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0063661D1799B4007568EA /* DropboxViewController.swift */; };
 		FE0063701D17A4AB007568EA /* KString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE00636F1D17A4AB007568EA /* KString.swift */; };
 		FE0063721D17AD01007568EA /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0063711D17AD01007568EA /* Regex.swift */; };
+		FE0D73C61D191F7A000E8448 /* MSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D73C51D191F7A000E8448 /* MSService.swift */; };
+		FE0D73C81D192373000E8448 /* MSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D73C71D192373000E8448 /* MSUser.swift */; };
 		FE141CCF1D13B49E00A36415 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE141CCE1D13B49E00A36415 /* GoogleService-Info.plist */; };
 		FE32A3AA1D01306800F174AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE32A3A91D01306700F174AC /* AppDelegate.swift */; };
 		FE32A3AF1D01306800F174AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE32A3AD1D01306800F174AC /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 		FE00636F1D17A4AB007568EA /* KString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KString.swift; sourceTree = "<group>"; };
 		FE0063711D17AD01007568EA /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		FE0BB7141D06AE9C003947DE /* BoxContentSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BoxContentSDK.framework; path = "../../../Library/Developer/Xcode/DerivedData/MShare-haelwpxtmmfhrvgjtcwjwqmhtzte/Build/Products/Debug-iphoneos/box-ios-sdk/BoxContentSDK.framework"; sourceTree = "<group>"; };
+		FE0D73C51D191F7A000E8448 /* MSService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSService.swift; sourceTree = "<group>"; };
+		FE0D73C71D192373000E8448 /* MSUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSUser.swift; sourceTree = "<group>"; };
 		FE141CCE1D13B49E00A36415 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE32A3A61D01306700F174AC /* MShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE32A3A91D01306700F174AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 		FE00636C1D1799D3007568EA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FE0D73C71D192373000E8448 /* MSUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -153,6 +158,14 @@
 				FE0063711D17AD01007568EA /* Regex.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FE0D73C41D191D8A000E8448 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FE0D73C51D191F7A000E8448 /* MSService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		FE32A39D1D01306700F174AC = {
@@ -180,6 +193,7 @@
 		FE32A3A81D01306700F174AC /* MShare */ = {
 			isa = PBXGroup;
 			children = (
+				FE0D73C41D191D8A000E8448 /* Services */,
 				FE00636E1D17A36F007568EA /* Extension */,
 				FE00636D1D179D89007568EA /* Views */,
 				FE00636C1D1799D3007568EA /* Models */,
@@ -407,10 +421,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE0D73C81D192373000E8448 /* MSUser.swift in Sources */,
 				FE32A3B21D01306800F174AC /* MShare.xcdatamodeld in Sources */,
 				FE0063721D17AD01007568EA /* Regex.swift in Sources */,
 				FED7C6431D052B8B00FEB641 /* MShareConstant.swift in Sources */,
 				FE0063701D17A4AB007568EA /* KString.swift in Sources */,
+				FE0D73C61D191F7A000E8448 /* MSService.swift in Sources */,
 				FE0063681D1799B4007568EA /* BaseViewController.swift in Sources */,
 				FE32A3AA1D01306800F174AC /* AppDelegate.swift in Sources */,
 				FE00636A1D1799B4007568EA /* DropboxViewController.swift in Sources */,

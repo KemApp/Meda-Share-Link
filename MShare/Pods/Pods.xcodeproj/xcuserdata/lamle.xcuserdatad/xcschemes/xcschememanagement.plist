@@ -59,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>box-ios-sdk-BoxContentSDKResources.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,6 +77,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>011B5C1D51CFFAA2B87F85DCEE71490C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>07333CC97EFE784BF63900587A842EEC</key>
 		<dict>
 			<key>primary</key>
@@ -82,12 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>12D90ED434E5D432A792EAA0C2F7705F</key>
+		<key>12A1CC216BCF5C67E5A214F001540297</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1304944AA0222A1BA59708AE89ADB0F1</key>
+		<key>12D90ED434E5D432A792EAA0C2F7705F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

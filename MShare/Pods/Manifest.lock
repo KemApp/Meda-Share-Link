@@ -112,6 +112,7 @@ PODS:
     - OneDriveSDK/Common
   - OneDriveSDK/OneDriveCoreSDK (1.2.0):
     - OneDriveSDK/Common
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - box-ios-sdk
@@ -124,6 +125,7 @@ DEPENDENCIES:
   - Intercom
   - MBProgressHUD
   - OneDriveSDK
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   ADALiOS: 6b59a796c6a431a5038cfc979751fcaea2144371
@@ -152,7 +154,8 @@ SPEC CHECKSUMS:
   Intercom: c05a2e008be2e5064d9045e0e7b919ca267da303
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   OneDriveSDK: d788984c0d914b1cb942b1cfaf4159aeb1c799b0
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 2912d8cc1f83efff668cf3b614cac3078b8b19ac
+PODFILE CHECKSUM: 2d9db8e52d0596cccc87def4eb2e89c19a090542
 
 COCOAPODS: 1.0.1

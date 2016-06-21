@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import Intercom
 import FirebaseDatabaseUI
+import SwiftyJSON
 class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientDelegate {
     var ref:FIRDatabaseReference!;
     var restClient:DBRestClient?;
@@ -26,7 +27,6 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
         else{
             restClient = DBRestClient.init(session: DBSession.sharedSession());
             restClient?.delegate = self;
-            let root:DBMetadata = DBMetadata();
             paths.append(DBMetadata());
             restClient?.loadMetadata("/");
             
@@ -34,12 +34,12 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
             DBSession.sharedSession().addObserver(self, forKeyPath: "isLinked", options: [NSKeyValueObservingOptions.Initial,NSKeyValueObservingOptions.New], context: nil);
         }
 //        
-//        ref = FIRDatabase.database().reference().root;
-//        print(ref.child("account").queryOrderedByKey().observeEventType(FIRDataEventType.Value, withBlock: { (snapShot) in
-//            if(snapShot.childrenCount > 0){
-//                
-//            }
-//        }))
+        ref = FIRDatabase.database().reference().root;
+        ref.child("account").queryOrderedByKey().observeEventType(FIRDataEventType.Value, withBlock: { (snapShot) in
+            if(snapShot.childrenCount > 0){
+                
+            }
+        })
 ////        ref.child("account1").setValue(["a":"bcd"])
 ////        let query:FIRDatabaseQuery = ref.queryOrderedByValue();
 ////        print(query);
@@ -47,7 +47,25 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
 //        print(firebaseArray.count());
 
         // Do any additional setup after loading the view.
+        let user:MSUser = MSUser();
+        user.email = "a@yahoo.com";
+        user.name = "quabebap";
+        user.type = CloudType.BOX;
         
+        
+        do{
+            let json:NSData = try NSJSONSerialization.dataWithJSONObject([user.email!,user.name!,user.type!.rawValue], options: NSJSONWritingOptions.PrettyPrinted);
+            do{
+                let decodedJson = try NSJSONSerialization.JSONObjectWithData(json, options: NSJSONReadingOptions.MutableContainers);
+                ref.child("account1").setValue(["a@yahoo":decodedJson])
+            }
+            catch _{
+                print("decode fail");
+            }
+        }
+        catch _{
+            print("Failure convert");
+        }
        self.scrollViewHeader = UIScrollView.init(frame: CGRectMake(0, 0, self.tbView.frame.size.width, 30.0));
     }
     
@@ -70,6 +88,7 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
             self.restClient = DBRestClient.init(session: session, userId: userId);
             self.restClient?.delegate = self;
             restClient?.loadMetadata("/");
+            
         }
     }
 
@@ -107,35 +126,35 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        scrollViewHeader.removeFromSuperview();
-        scrollViewHeader = nil;
-        scrollViewHeader = UIScrollView.init(frame:CGRectMake(0, 0, tableView.frame.width, 30));
-        let headerView:UIView = UIView.init(frame:CGRectMake(0, 0, tableView.frame.width, 30));
-        
-        var width:CGFloat = 0.0;
-        for path in paths {
-            let button:UIButton = UIButton.init(frame: CGRectMake(0, width, 50, 30));
-            button.backgroundColor = UIColor.grayColor();
-            width += 50;
-            scrollViewHeader.addSubview(button);
-
-            if(paths.indexOf(path) == 0){
-//                button.titleLabel?.text = "root";
-                button.setTitle("root", forState: .Normal);
-            }
-            else{
-                button.titleLabel?.text = path.path;
-                button.setTitle(path.path, forState: .Normal);
-            }
-            
-        }
-        scrollViewHeader.contentSize = CGSizeMake(width, 30);
-        headerView.addSubview(scrollViewHeader);
-        headerView.backgroundColor = UIColor.blueColor();
-        
-        scrollViewHeader.backgroundColor = UIColor.greenColor();
-        return headerView;
+//        scrollViewHeader = UIScrollView.init(frame:CGRectMake(0, 0, tableView.frame.width, 30));
+//        let headerView:UIView = UIView.init(frame:CGRectMake(0, 0, tableView.frame.width, 30));
+//        
+//        var width:CGFloat = 0.0;
+//        for path in paths {
+//            let button:UIButton = UIButton.init(frame: CGRectMake(0, width, 50, 30));
+//            button.backgroundColor = UIColor.grayColor();
+//            width += 50;
+//            scrollViewHeader.addSubview(button);
+//
+//            if(paths.indexOf(path) == 0){
+////                button.titleLabel?.text = "root";
+//                button.setTitle("root", forState: .Normal);
+//            }
+//            else{
+//                button.titleLabel?.text = path.path;
+//                button.setTitle(path.path, forState: .Normal);
+//            }
+//            
+//        }
+//        scrollViewHeader.contentSize = CGSizeMake(width, 30);
+//        headerView.addSubview(scrollViewHeader);
+//        headerView.backgroundColor = UIColor.blueColor();
+//        
+//        scrollViewHeader.backgroundColor = UIColor.greenColor();
+        return scrollViewHeader;
     }
+    
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let item:DBMetadata = self.dataSource[indexPath.row] as! DBMetadata;
@@ -143,8 +162,92 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
         if(item.isDirectory){
             self.paths.append(item);
             self.restClient?.loadMetadata(item.path);
-            self.tableView(self.tbView, viewForHeaderInSection: 0);
+            self.updateHeader();
         }
+    }
+    
+    func updateHeader(){
+        
+        var width:CGFloat = 0.0;
+        var index:NSInteger = 0;
+        var button:UIButton;
+        for subView  in scrollViewHeader.subviews {
+            subView.hidden = true;
+        }
+        
+        var sizeOfButton:CGSize;
+        
+        for path in paths {
+            
+            
+            if(paths.indexOf(path) == 0){
+                //                button.titleLabel?.text = "root";
+                sizeOfButton = "root".sizeOfStringWithFont(UIFont.init(name: kFontHelveticaNeue, size: kSizeOfFontTitle)!, size: CGSizeMake(CGFloat.max, 30.0));
+            }
+            else{
+                sizeOfButton = path.filename.sizeOfStringWithFont(UIFont.init(name: kFontHelveticaNeue, size: kSizeOfFontTitle)!, size: CGSizeMake(CGFloat.max, 30.0));
+            }
+            
+            if(scrollViewHeader.viewWithTag(0) != nil && scrollViewHeader.viewWithTag(0)?.isKindOfClass(UIButton) == true){
+                button = scrollViewHeader.viewWithTag(0) as! UIButton;
+                
+                if(paths.indexOf(path) == 0){
+                    //                button.titleLabel?.text = "root";
+                    button.setTitle("root", forState: .Normal);
+                }
+                else{
+                    button.setTitle(path.filename, forState: .Normal);
+                }
+               
+                button.frame = CGRectMake(width, 0, sizeOfButton.width, sizeOfButton.height);
+            }
+            else{
+               
+                
+                button = UIButton.init(frame: CGRectMake(width, 0, sizeOfButton.width + 10, 30));
+                
+               
+                scrollViewHeader.addSubview(button);
+                
+                if(paths.indexOf(path) == 0){
+                    //                button.titleLabel?.text = "root";
+                    button.setTitle("root", forState: .Normal);
+                }
+                else{
+                    button.setTitle(path.filename, forState: .Normal);
+                }
+            }
+            button.backgroundColor = UIColor.grayColor();
+            button.titleLabel?.font = UIFont.init(name: kFontHelveticaNeue, size: kSizeOfFontTitle);
+            button.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 5);
+            
+            button.layer.cornerRadius = button.frame.height / 2.0;
+            button.layer.masksToBounds = true;
+            button.addTarget(self, action:#selector(DropboxViewController.loadDataFromPath(_:)), forControlEvents: UIControlEvents.TouchUpInside);
+            button.tag = index;
+            width = width + button.frame.size.width;
+            index = index + 1;
+            
+            button.hidden = false;
+        }
+        scrollViewHeader.contentSize = CGSizeMake(width, 30);
+        
+        scrollViewHeader.scrollRectToVisible(CGRectMake(scrollViewHeader.contentSize.width - scrollViewHeader.frame.size.width, 0, scrollViewHeader.frame.size.width, scrollViewHeader.frame.size.height), animated: false);
+        scrollViewHeader.setNeedsDisplay();
+    }
+    
+    func loadDataFromPath(sender:UIButton){
+        let index:NSInteger = sender.tag;
+        
+        self.paths.removeRange(index + 1..<self.paths.count);
+        
+        if(index == 0){
+            restClient?.loadMetadata("/");
+        }
+        else{
+            restClient?.loadMetadata(self.paths[index].path);
+        }
+        
     }
     /*
      *  MARK: RESTCLIENT DELEGATE
@@ -184,6 +287,7 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
         }
         
         self.tbView.reloadData();
+        self.updateHeader();
         print(metadata.contents);
     }
     

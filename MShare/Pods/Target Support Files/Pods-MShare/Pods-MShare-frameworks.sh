@@ -94,6 +94,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/GoogleAPIClient/GoogleAPIClient.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MBProgressHUD/MBProgressHUD.framework"
   install_framework "$BUILT_PRODUCTS_DIR/OneDriveSDK/OneDriveSDK.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
   install_framework "$BUILT_PRODUCTS_DIR/box-ios-sdk/BoxContentSDK.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -107,5 +108,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/GoogleAPIClient/GoogleAPIClient.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MBProgressHUD/MBProgressHUD.framework"
   install_framework "$BUILT_PRODUCTS_DIR/OneDriveSDK/OneDriveSDK.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
   install_framework "$BUILT_PRODUCTS_DIR/box-ios-sdk/BoxContentSDK.framework"
 fi
