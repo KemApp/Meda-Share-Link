@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SwiftyJSON
 class MSService: NSObject {
-    let sharedIntance:MSService = MSService();
+    static var sharedIntance:MSService = MSService();
     var startIndex:NSInteger = 0;
     var endIndex:NSInteger = 0;
     let ref:FIRDatabase = FIRDatabase.database();
@@ -19,5 +19,14 @@ class MSService: NSObject {
     func addAccountToMS(user:MSUser){
 //        let json = JSON(user);
 //        ref.reference().child(kBranchOfUser).setValue([user.email : json]);
+    }
+    
+    func checkAccountExist(user:MSUser, completion:(isExist:Bool)->Void){
+        ref.reference().child(kBranchOfUser).queryOrderedByKey().observeEventType(FIRDataEventType.Value, withBlock: { (snapShot) in
+            if(snapShot.childrenCount > 0){
+                completion(isExist: true);
+            }
+            completion(isExist: false);
+        })
     }
 }

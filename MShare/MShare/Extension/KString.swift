@@ -383,6 +383,8 @@ public extension String
         return fileTypes.contains(fileExtension.lowercaseString);
     }
     
+    
+    
     func sizeOfStringWithFont(font:UIFont,size:CGSize) -> CGSize{
         let string:NSString = self as NSString;
         let rect:CGRect = string.boundingRectWithSize(size, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName:font], context: nil);

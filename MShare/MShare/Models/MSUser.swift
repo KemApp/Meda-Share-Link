@@ -22,8 +22,8 @@ class MSUser: NSObject {
     
     var type:CloudType?;
     
-//    func convertToDictionary()->[String:AnyObject]{
-//        return [];
-//    }
+    func convertToDictionary()->[String:AnyObject]{
+        return ["email":email!,"name":name!,"type":type!.rawValue];
+    }
 }
 

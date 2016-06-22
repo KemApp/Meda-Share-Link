@@ -10,6 +10,7 @@ import UIKit
 
 class CloudViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet var tbView:UITableView!;
+    var dataSource:[AnyObject] = [AnyObject]();
     override func viewDidLoad() {
         super.viewDidLoad()
 

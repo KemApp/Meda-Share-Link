@@ -13,7 +13,8 @@ let kDropBoxAppSecret:String = "jo1fnzca24qw347";
 let kBoxAppKey:String = "w4r80qdr2tbbut6z1iaawsn7y8vmlaxd";
 let kBoxScerect:String = "ecnxVswrEH5buGd6nxGr7jwUgEK3G62g"
 let kOneDriveAppKey:String = "72d71ecf-b997-4680-84ce-b30290d2c079";
-let kGoogleDriveKey:String = "";
+let kGoogleDriveKeychainItemName:String = "KMedia";
+let kGoogleClientID:String = "808428807675-5ji8no7jm418kkssvcahb6vjol23f93b.apps.googleusercontent.com";
 let kFireBaseURL:String = "";
 
 // Font of App

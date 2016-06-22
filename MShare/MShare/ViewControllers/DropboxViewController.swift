@@ -15,9 +15,9 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
     var ref:FIRDatabaseReference!;
     var restClient:DBRestClient?;
     var cursor:String = String();
-    var dataSource:[AnyObject] = [AnyObject]();
     var paths:[DBMetadata] = [DBMetadata]();
     var scrollViewHeader:UIScrollView!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if(DBSession.sharedSession() == nil || DBSession.sharedSession().isLinked() == false){
@@ -34,12 +34,7 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
             DBSession.sharedSession().addObserver(self, forKeyPath: "isLinked", options: [NSKeyValueObservingOptions.Initial,NSKeyValueObservingOptions.New], context: nil);
         }
 //        
-        ref = FIRDatabase.database().reference().root;
-        ref.child("account").queryOrderedByKey().observeEventType(FIRDataEventType.Value, withBlock: { (snapShot) in
-            if(snapShot.childrenCount > 0){
-                
-            }
-        })
+       
 ////        ref.child("account1").setValue(["a":"bcd"])
 ////        let query:FIRDatabaseQuery = ref.queryOrderedByValue();
 ////        print(query);
@@ -52,20 +47,24 @@ class DropboxViewController: CloudViewController,DBSessionDelegate,DBRestClientD
         user.name = "quabebap";
         user.type = CloudType.BOX;
         
-        
-        do{
-            let json:NSData = try NSJSONSerialization.dataWithJSONObject([user.email!,user.name!,user.type!.rawValue], options: NSJSONWritingOptions.PrettyPrinted);
-            do{
-                let decodedJson = try NSJSONSerialization.JSONObjectWithData(json, options: NSJSONReadingOptions.MutableContainers);
-                ref.child("account1").setValue(["a@yahoo":decodedJson])
-            }
-            catch _{
-                print("decode fail");
+        MSService.sharedIntance.checkAccountExist(user) { (isExist) in
+            if(isExist){
+                
             }
         }
-        catch _{
-            print("Failure convert");
-        }
+//        do{
+//            let json:NSData = try NSJSONSerialization.dataWithJSONObject([user.email!,user.name!,user.type!.rawValue], options: NSJSONWritingOptions.PrettyPrinted);
+//            do{
+//                let decodedJson = try NSJSONSerialization.JSONObjectWithData(json, options: NSJSONReadingOptions.MutableContainers);
+//                ref.child("account1").setValue(["a@yahoo":decodedJson])
+//            }
+//            catch _{
+//                print("decode fail");
+//            }
+//        }
+//        catch _{
+//            print("Failure convert");
+//        }
        self.scrollViewHeader = UIScrollView.init(frame: CGRectMake(0, 0, self.tbView.frame.size.width, 30.0));
     }
     
