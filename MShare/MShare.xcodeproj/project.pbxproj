@@ -17,6 +17,7 @@
 		FE0D73C81D192373000E8448 /* MSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D73C71D192373000E8448 /* MSUser.swift */; };
 		FE141CCF1D13B49E00A36415 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE141CCE1D13B49E00A36415 /* GoogleService-Info.plist */; };
 		FE19081F1D1A390400FA917F /* GoogleDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE19081E1D1A390400FA917F /* GoogleDriveViewController.swift */; };
+		FE1908211D1A9BCA00FA917F /* KExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1908201D1A9BCA00FA917F /* KExtension.swift */; };
 		FE32A3AA1D01306800F174AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE32A3A91D01306700F174AC /* AppDelegate.swift */; };
 		FE32A3AF1D01306800F174AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE32A3AD1D01306800F174AC /* Main.storyboard */; };
 		FE32A3B21D01306800F174AC /* MShare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE32A3B01D01306800F174AC /* MShare.xcdatamodeld */; };
@@ -59,6 +60,7 @@
 		FE0D73C71D192373000E8448 /* MSUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSUser.swift; sourceTree = "<group>"; };
 		FE141CCE1D13B49E00A36415 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE19081E1D1A390400FA917F /* GoogleDriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleDriveViewController.swift; sourceTree = "<group>"; };
+		FE1908201D1A9BCA00FA917F /* KExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KExtension.swift; sourceTree = "<group>"; };
 		FE32A3A61D01306700F174AC /* MShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE32A3A91D01306700F174AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE32A3AE1D01306800F174AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				FE00636F1D17A4AB007568EA /* KString.swift */,
 				FE0063711D17AD01007568EA /* Regex.swift */,
+				FE1908201D1A9BCA00FA917F /* KExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				FE32A3B21D01306800F174AC /* MShare.xcdatamodeld in Sources */,
 				FE0063721D17AD01007568EA /* Regex.swift in Sources */,
 				FED7C6431D052B8B00FEB641 /* MShareConstant.swift in Sources */,
+				FE1908211D1A9BCA00FA917F /* KExtension.swift in Sources */,
 				FE0063701D17A4AB007568EA /* KString.swift in Sources */,
 				FE0D73C61D191F7A000E8448 /* MSService.swift in Sources */,
 				FE0063681D1799B4007568EA /* BaseViewController.swift in Sources */,
