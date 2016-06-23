@@ -19,11 +19,13 @@ enum CloudType:String{
 class MSUser: NSObject {
     var email:String?
     var name:String?
-    
     var type:CloudType?;
+    var createdDate:NSDate?;
+    var updateDate:NSDate?;
     
     func convertToDictionary()->[String:AnyObject]{
-        return ["email":email!,"name":name!,"type":type!.rawValue];
+        return ["email":email!,"name":name!,"type":type!.rawValue,"create_date":createdDate!.toString(),"update_date":updateDate!.toString()];
     }
 }
+
 

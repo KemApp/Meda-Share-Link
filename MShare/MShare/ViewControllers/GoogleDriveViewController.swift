@@ -26,6 +26,10 @@ class GoogleDriveViewController: CloudViewController {
 
         // Do any additional setup after loading the view.
         self.scrollViewHeader = UIScrollView.init(frame: CGRectMake(0, 0, self.tbView.frame.size.width, 30.0));
+        
+        let root:GTLDriveFile = GTLDriveFile();
+        root.identifier = "root";
+        paths.append(root);
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +42,24 @@ class GoogleDriveViewController: CloudViewController {
     override func viewDidAppear(animated: Bool) {
         if let authorizer = service.authorizer,
             canAuth = authorizer.canAuthorize where canAuth {
-            getFilesInGoogleDrive();
+            getFilesInGoogleDrive((paths.last?.identifier)!);
+            
+            let query:GTLQueryDrive = GTLQueryDrive.queryForAboutGet();
+            query.fields = "user,storageQuota";
+            
+            service.executeQuery(query, completionHandler: { (ticket, object, error) in
+                if(error == nil){
+                    let about:GTLDriveAbout = object as! GTLDriveAbout;
+                    let user:MSUser = MSUser();
+                    user.email = about.user.emailAddress;
+                    user.name = about.user.displayName;
+                    user.type = CloudType.GOOGLEDRIVE;
+                    MSService.sharedIntance.addAccountToMS(user, completion: { (isSucces) in
+                        
+                    });
+                }
+            })
+            
         } else {
             presentViewController(
                 createAuthController(),
@@ -48,11 +69,11 @@ class GoogleDriveViewController: CloudViewController {
         }
     }
     
-    func getFilesInGoogleDrive(){
+    func getFilesInGoogleDrive(parentId:String){
+        self.dataSource.removeAll();
         let query:GTLQueryDrive = GTLQueryDrive.queryForFilesList();
-        let parentId:String = "root";
         query.q = "'\(parentId)' in parents";
-        
+//        query.pageSize = 10;
        
         
         service.executeQuery(query) { (ticket, object, error) in
@@ -82,6 +103,7 @@ class GoogleDriveViewController: CloudViewController {
 
                 })
                 self.tbView.reloadData();
+                self.updateHeader();
             }
         }
     }
@@ -174,31 +196,6 @@ class GoogleDriveViewController: CloudViewController {
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        //        scrollViewHeader = UIScrollView.init(frame:CGRectMake(0, 0, tableView.frame.width, 30));
-        //        let headerView:UIView = UIView.init(frame:CGRectMake(0, 0, tableView.frame.width, 30));
-        //
-        //        var width:CGFloat = 0.0;
-        //        for path in paths {
-        //            let button:UIButton = UIButton.init(frame: CGRectMake(0, width, 50, 30));
-        //            button.backgroundColor = UIColor.grayColor();
-        //            width += 50;
-        //            scrollViewHeader.addSubview(button);
-        //
-        //            if(paths.indexOf(path) == 0){
-        ////                button.titleLabel?.text = "root";
-        //                button.setTitle("root", forState: .Normal);
-        //            }
-        //            else{
-        //                button.titleLabel?.text = path.path;
-        //                button.setTitle(path.path, forState: .Normal);
-        //            }
-        //
-        //        }
-        //        scrollViewHeader.contentSize = CGSizeMake(width, 30);
-        //        headerView.addSubview(scrollViewHeader);
-        //        headerView.backgroundColor = UIColor.blueColor();
-        //
-        //        scrollViewHeader.backgroundColor = UIColor.greenColor();
         return scrollViewHeader;
     }
     
@@ -210,6 +207,7 @@ class GoogleDriveViewController: CloudViewController {
         if(item.isDirectory()){
             self.paths.append(item);
             self.updateHeader();
+            self.getFilesInGoogleDrive((self.paths.last?.identifier)!);
         }
     }
     
@@ -282,5 +280,13 @@ class GoogleDriveViewController: CloudViewController {
         scrollViewHeader.scrollRectToVisible(CGRectMake(scrollViewHeader.contentSize.width - scrollViewHeader.frame.size.width, 0, scrollViewHeader.frame.size.width, scrollViewHeader.frame.size.height), animated: false);
         scrollViewHeader.setNeedsDisplay();
     }
+    
+    func loadDataFromPath(sender:UIButton){
+        let index:NSInteger = sender.tag;
+        self.paths.removeRange(index + 1..<self.paths.count);
+        self.getFilesInGoogleDrive((self.paths.last?.identifier)!);
+//        self.updateHeader();
+    }
+
     
 }

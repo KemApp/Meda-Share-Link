@@ -217,22 +217,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MShare/Services/MSService.swift"
-            timestampString = "488192311.505941"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "addAccountToMS(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MShare/ViewControllers/DropboxViewController.swift"
             timestampString = "488261455.62017"
             startingColumnNumber = "9223372036854775807"
@@ -266,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MShare/Services/MSService.swift"
-            timestampString = "488255755.939815"
+            timestampString = "488360046.615237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "checkAccountExist(_:completion:)"
             landmarkType = "5">
             <Locations>
@@ -282,11 +266,11 @@
                   moduleName = "MShare"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lamle/Desktop/Apps/Kem&apos;sApp/MShare/MShare/Services/MSService.swift"
-                  timestampString = "488270311.995234"
+                  timestampString = "488360046.829913"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
                   offsetFromSymbolStart = "31">
                </Location>
                <Location
@@ -297,11 +281,11 @@
                   moduleName = "MShare"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lamle/Desktop/Apps/Kem&apos;sApp/MShare/MShare/Services/MSService.swift"
-                  timestampString = "488270311.995336"
+                  timestampString = "488360046.830025"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
                   offsetFromSymbolStart = "20">
                </Location>
             </Locations>
@@ -330,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MShare/Services/MSService.swift"
-            timestampString = "488256468.811642"
+            timestampString = "488360046.615237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "checkAccountExist(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -342,32 +326,160 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MShare/ViewControllers/GoogleDriveViewController.swift"
-            timestampString = "488268947.132119"
+            timestampString = "488357207.351409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "getFilesInGoogleDrive()"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "getFilesInGoogleDrive(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MShare/ViewControllers/GoogleDriveViewController.swift"
-            timestampString = "488268947.132119"
+            timestampString = "488357207.351409"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "getFilesInGoogleDrive(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MShare/ViewControllers/GoogleDriveViewController.swift"
+            timestampString = "488357207.351409"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "getFilesInGoogleDrive(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MShare/ViewControllers/GoogleDriveViewController.swift"
+            timestampString = "488344350.58672"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MShare/ViewControllers/GoogleDriveViewController.swift"
+            timestampString = "488357207.351409"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MShare/ViewControllers/GoogleDriveViewController.swift"
+            timestampString = "488355804.354795"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MShare/ViewControllers/GoogleDriveViewController.swift"
+            timestampString = "488357225.311796"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
-            landmarkName = "getFilesInGoogleDrive()"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MShare.GoogleDriveViewController.(viewDidAppear (Swift.Bool) -&gt; ()).(closure #1)"
+                  moduleName = "MShare"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lamle/Desktop/Apps/Kem&apos;sApp/MShare/MShare/ViewControllers/GoogleDriveViewController.swift"
+                  timestampString = "488359003.553229"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "1329">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MShare.GoogleDriveViewController.(viewDidAppear (Swift.Bool) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "MShare"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lamle/Desktop/Apps/Kem&apos;sApp/MShare/MShare/ViewControllers/GoogleDriveViewController.swift"
+                  timestampString = "488359003.553336"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MShare/Services/MSService.swift"
+            timestampString = "488359525.721131"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "addAccountToMS(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -377,46 +489,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MShare/ViewControllers/GoogleDriveViewController.swift"
-            timestampString = "488268947.132119"
+            filePath = "MShare/Services/MSService.swift"
+            timestampString = "488359526.437215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "getFilesInGoogleDrive()"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "addAccountToMS(_:completion:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MShare.GoogleDriveViewController.getFilesInGoogleDrive () -&gt; ()"
-                  moduleName = "MShare"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lamle/Desktop/Apps/Kem&apos;sApp/MShare/MShare/ViewControllers/GoogleDriveViewController.swift"
-                  timestampString = "488270311.999409"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "598">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MShare.GoogleDriveViewController.(getFilesInGoogleDrive () -&gt; ()).(closure #1)"
-                  moduleName = "MShare"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lamle/Desktop/Apps/Kem&apos;sApp/MShare/MShare/ViewControllers/GoogleDriveViewController.swift"
-                  timestampString = "488270311.999536"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -390,4 +390,9 @@ public extension String
         let rect:CGRect = string.boundingRectWithSize(size, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName:font], context: nil);
         return rect.size;
     }
+    
+    public func removeDot()->String{
+        
+        return self.stringByReplacingOccurrencesOfString(".", withString: "");
+    }
 }
